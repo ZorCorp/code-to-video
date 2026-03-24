@@ -1,0 +1,21 @@
+# Dependencies
+node_modules/
+
+# Remotion build artifacts
+video/out/
+video/public/assets/screens/
+
+# Stitch generated data
+.stitch/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+
+# Environment
+.env
+.env.local

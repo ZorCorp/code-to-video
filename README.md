@@ -28,6 +28,68 @@ The entire pipeline runs inside Claude Code. Only minimal human confirmation ste
 
 Then follow the AI prompts to provide your project path and feature description.
 
+## Sample Prompts
+
+### Full pipeline (all 3 sub-skills)
+
+Run the entire pipeline end-to-end with a single invocation:
+
+```
+/sourcecode-to-video:sourcecode-to-video
+
+> My project is at C:\Projects\my-webapp. It's a Next.js e-commerce store.
+> Please generate a demo video showing the shopping flow: browse products →
+> add to cart → checkout → order confirmation.
+```
+
+```
+/sourcecode-to-video:sourcecode-to-video
+
+> Source code is at ~/projects/dashboard-app (React + Tailwind).
+> Key flows to demo: user login → view analytics dashboard → export report as PDF.
+```
+
+### Sub-skill 1: source-to-stitch
+
+Analyze source code and generate Stitch UI screen designs only (no video):
+
+```
+/sourcecode-to-video:source-to-stitch
+
+> Analyze the project at C:\Projects\my-webapp. It's a Vue.js app for booking
+> hotel rooms. Generate Stitch screens for: search hotels → view room details →
+> select dates → complete booking → confirmation page.
+```
+
+### Sub-skill 2: stitch-to-video
+
+Convert existing Stitch designs into an MP4 video (assumes sub-skill 1 is already done):
+
+```
+/sourcecode-to-video:stitch-to-video
+
+> The Stitch designs are ready. The project metadata is at
+> C:\Projects\my-webapp\.stitch\metadata.json. Please render the demo video.
+```
+
+### Sub-skill 3: video-to-drive
+
+Upload a rendered video to Google Drive (assumes sub-skill 2 is already done):
+
+```
+/sourcecode-to-video:video-to-drive
+
+> The video is at C:\Projects\my-webapp\video\out\demo.mp4.
+> Please upload it to Google Drive and give me a shareable link.
+```
+
+### Tips
+
+- **Be specific about user flows** — the more detail you give about the screens and flow, the better the Stitch designs will be.
+- **Mention your tech stack** — helps the AI understand your project structure (e.g., Next.js, Vue, React + Tailwind).
+- **Include design preferences** — you can specify colors, fonts, or branding (e.g., "use dark theme with #003366 navy and #C4972F gold accents").
+- **Run sub-skills individually** if you want more control, or re-run a single step (e.g., re-render the video with different timing).
+
 ## Pipeline
 
 | Step | Sub-skill | What it does |
