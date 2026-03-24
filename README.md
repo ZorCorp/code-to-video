@@ -1,0 +1,86 @@
+# sourcecode-to-video
+
+> Claude Code plugin — Turn existing web source code into a shareable Google Drive POC demo video
+
+## Overview
+
+```
+web source code → Stitch UI designs → Remotion MP4 → Google Drive URL
+```
+
+The entire pipeline runs inside Claude Code. Only minimal human confirmation steps are needed.
+
+## Installation
+
+```bash
+# 1. Add the marketplace
+/plugin marketplace add CYH928/sourcecode-to-video
+
+# 2. Install the plugin
+/plugin install sourcecode-to-video
+```
+
+## Usage
+
+```
+/sourcecode-to-video:sourcecode-to-video
+```
+
+Then follow the AI prompts to provide your project path and feature description.
+
+## Pipeline
+
+| Step | Sub-skill | What it does |
+|------|-----------|-------------|
+| 1 | `source-to-stitch` | Analyzes source code → generates Stitch UI screens |
+| 2 | `stitch-to-video` | Stitch screens → Remotion MP4 video |
+| 3 | `video-to-drive` | Uploads to Google Drive → returns shareable URL |
+
+## Prerequisites
+
+| Tool | Install | Purpose |
+|------|---------|---------|
+| `gcloud` CLI | [Google Cloud SDK](https://cloud.google.com/sdk/docs/install) | Stitch MCP authentication |
+| Node.js 18+ | — | Remotion rendering |
+| `gws` CLI | `npm install -g @googleworkspace/cli` | Google Drive upload |
+
+**One-time setup:**
+```bash
+# Authenticate Stitch MCP
+gcloud auth application-default login
+
+# Authenticate Google Drive (opens browser once)
+gws auth setup
+```
+
+**GCP Console:**
+Enable the Stitch API: GCP Console → APIs & Services → search "Stitch API" → Enable.
+
+**MCP configuration:**
+Create `.mcp.json` in your project root:
+```json
+{
+  "mcpServers": {
+    "stitch": {
+      "command": "npx",
+      "args": ["stitch-mcp"]
+    }
+  }
+}
+```
+Add to `~/.claude/settings.json`: `"enabledMcpjsonServers": ["stitch"]`
+
+## Reference Example
+
+See `skills/sourcecode-to-video/examples/uststore/` — HKUST Souvenir Shop Virtual Try-On POC
+
+## Tech Stack
+
+- **Stitch** — Google AI UI design generation
+- **Remotion** — React-based programmatic video rendering
+- **gws CLI** — Google Workspace CLI (Drive upload)
+- **Chrome Headless Shell** — Remotion rendering engine (auto-downloaded ~107MB on first run)
+
+## License
+
+MIT

@@ -1,0 +1,23 @@
+{
+  "name": "project-demo-video",
+  "version": "1.0.0",
+  "description": "POC Demo Video",
+  "scripts": {
+    "start": "node node_modules/@remotion/cli/remotion-cli.js studio",
+    "build": "node node_modules/@remotion/cli/remotion-cli.js render WalkthroughComposition out/demo.mp4",
+    "render": "node node_modules/@remotion/cli/remotion-cli.js render WalkthroughComposition out/demo.mp4 --codec h264 --public-dir=./public"
+  },
+  "dependencies": {
+    "@remotion/bundler": "^4.0.438",
+    "@remotion/cli": "^4.0.438",
+    "@remotion/renderer": "^4.0.438",
+    "@remotion/transitions": "^4.0.438",
+    "remotion": "^4.0.438"
+  },
+  "remotion": {
+    "entryPoint": "src/index.ts"
+  },
+  "devDependencies": {
+    "@rspack/core": "^1.7.10"
+  }
+}
