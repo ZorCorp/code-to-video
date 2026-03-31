@@ -14,7 +14,7 @@ The entire pipeline runs inside Claude Code. Only minimal human confirmation ste
 
 ```bash
 # 1. Add the marketplace
-/plugin marketplace add CYH928/codetovideo-plugin
+/plugin marketplace add ZorCorp/zorskill
 
 # 2. Install the plugin
 /plugin install code-to-video
