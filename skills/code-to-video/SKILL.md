@@ -1,5 +1,5 @@
 ---
-name: sourcecode-to-video
+name: code-to-video
 description: Turn existing web source code into a shareable Google Drive demo video — analyzes code, generates Stitch UI screens, renders a Remotion MP4, and uploads to Google Drive.
 allowed-tools:
   - "mcp__stitch__*"
@@ -12,7 +12,7 @@ allowed-tools:
   - "Agent"
 ---
 
-# sourcecode-to-video
+# code-to-video
 
 Turn existing web source code into a shareable POC demo video, entirely from the terminal.
 
@@ -88,7 +88,7 @@ Then restart Claude Code.
 
 ## Entry Point
 
-When `/sourcecode-to-video` is invoked:
+When `/code-to-video` is invoked:
 
 1. Ask the user: "What is the path to your web project? What key user flows should the video demonstrate?"
 2. Execute the three sub-skills in order

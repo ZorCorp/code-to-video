@@ -1,12 +1,12 @@
 {
-  "name": "sourcecode-to-video",
+  "name": "code-to-video",
   "version": "1.0.0",
   "description": "Turn existing web source code into a shareable Google Drive demo video — analyzes code, generates Stitch UI screens, renders a Remotion MP4, and uploads to Google Drive.",
   "author": {
     "name": "CYH928",
     "url": "https://github.com/CYH928"
   },
-  "repository": "https://github.com/CYH928/sourcecode-to-video",
+  "repository": "https://github.com/CYH928/codetovideo-plugin",
   "license": "MIT",
   "keywords": ["stitch", "remotion", "video", "demo", "ui-design", "google-drive"],
   "skills": "./skills/"

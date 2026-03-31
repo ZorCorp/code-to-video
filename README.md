@@ -1,4 +1,4 @@
-# sourcecode-to-video
+# code-to-video
 
 > Claude Code plugin — Turn existing web source code into a shareable Google Drive POC demo video
 
@@ -14,16 +14,16 @@ The entire pipeline runs inside Claude Code. Only minimal human confirmation ste
 
 ```bash
 # 1. Add the marketplace
-/plugin marketplace add CYH928/sourcecode-to-video
+/plugin marketplace add CYH928/codetovideo-plugin
 
 # 2. Install the plugin
-/plugin install sourcecode-to-video
+/plugin install code-to-video
 ```
 
 ## Usage
 
 ```
-/sourcecode-to-video:sourcecode-to-video
+/code-to-video:code-to-video
 ```
 
 Then follow the AI prompts to provide your project path and feature description.
@@ -35,7 +35,7 @@ Then follow the AI prompts to provide your project path and feature description.
 Run the entire pipeline end-to-end with a single invocation:
 
 ```
-/sourcecode-to-video:sourcecode-to-video
+/code-to-video:code-to-video
 
 > My project is at C:\Projects\my-webapp. It's a Next.js e-commerce store.
 > Please generate a demo video showing the shopping flow: browse products →
@@ -43,7 +43,7 @@ Run the entire pipeline end-to-end with a single invocation:
 ```
 
 ```
-/sourcecode-to-video:sourcecode-to-video
+/code-to-video:code-to-video
 
 > Source code is at ~/projects/dashboard-app (React + Tailwind).
 > Key flows to demo: user login → view analytics dashboard → export report as PDF.
@@ -54,7 +54,7 @@ Run the entire pipeline end-to-end with a single invocation:
 Analyze source code and generate Stitch UI screen designs only (no video):
 
 ```
-/sourcecode-to-video:source-to-stitch
+/code-to-video:source-to-stitch
 
 > Analyze the project at C:\Projects\my-webapp. It's a Vue.js app for booking
 > hotel rooms. Generate Stitch screens for: search hotels → view room details →
@@ -66,7 +66,7 @@ Analyze source code and generate Stitch UI screen designs only (no video):
 Convert existing Stitch designs into an MP4 video (assumes sub-skill 1 is already done):
 
 ```
-/sourcecode-to-video:stitch-to-video
+/code-to-video:stitch-to-video
 
 > The Stitch designs are ready. The project metadata is at
 > C:\Projects\my-webapp\.stitch\metadata.json. Please render the demo video.
@@ -77,7 +77,7 @@ Convert existing Stitch designs into an MP4 video (assumes sub-skill 1 is alread
 Upload a rendered video to Google Drive (assumes sub-skill 2 is already done):
 
 ```
-/sourcecode-to-video:video-to-drive
+/code-to-video:video-to-drive
 
 > The video is at C:\Projects\my-webapp\video\out\demo.mp4.
 > Please upload it to Google Drive and give me a shareable link.
@@ -134,7 +134,7 @@ Add to `~/.claude/settings.json`: `"enabledMcpjsonServers": ["stitch"]`
 
 ## Reference Example
 
-See `skills/sourcecode-to-video/examples/uststore/` — HKUST Souvenir Shop Virtual Try-On POC
+See `skills/code-to-video/examples/uststore/` — HKUST Souvenir Shop Virtual Try-On POC
 
 ## Tech Stack
 

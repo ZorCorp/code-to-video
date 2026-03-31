@@ -1,4 +1,4 @@
-# sourcecode-to-video
+# code-to-video
 
 Claude Code plugin that converts web source code into shareable demo videos.
 
@@ -24,11 +24,11 @@ Wait for user confirmation between each sub-skill before proceeding.
 
 ## Project Structure
 
-- `skills/sourcecode-to-video/SKILL.md` — main skill entrypoint
-- `skills/sourcecode-to-video/sub-skills/` — individual pipeline stages
-- `skills/sourcecode-to-video/examples/` — reference implementations
+- `skills/code-to-video/SKILL.md` — main skill entrypoint
+- `skills/code-to-video/sub-skills/` — individual pipeline stages
+- `skills/code-to-video/examples/` — reference implementations
 
 ## Build / Test
 
 No build step. This is a pure-markdown skill plugin with one Remotion template at:
-`skills/sourcecode-to-video/sub-skills/stitch-to-video/resources/remotion-template/`
+`skills/code-to-video/sub-skills/stitch-to-video/resources/remotion-template/`
